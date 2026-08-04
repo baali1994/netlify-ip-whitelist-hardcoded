@@ -13,7 +13,9 @@ import { createClient } from "@supabase/supabase-js";
 */
 
 const SUPABASE_URL = "https://lfnjernrgkdtfetyoghq.supabase.co";
-const SUPABASE_SECRET_KEY = "sb_secret__YSHdbowAfC5QgtOV9aY3g_SLWXNmKk";
+const SUPABASE_SECRET_KEY = String(
+  process.env.SUPABASE_SECRET_KEY || ""
+).trim();
 const ADMIN_TOKEN = "sb_publishable_zW_eXePChSo8yaTw4aJ8Lg_IUHe9bZK";
 
 function json(status, body) {
